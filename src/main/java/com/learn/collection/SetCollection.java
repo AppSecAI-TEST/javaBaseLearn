@@ -1,4 +1,4 @@
-package collection.learn;
+package com.learn.collection;
 
 import java.util.HashSet;
 import java.util.Set;
