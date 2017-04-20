@@ -1,5 +1,6 @@
 package com.learn.utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -14,11 +15,17 @@ public class DateUtil {
         String result=dateFormat.format(date);
         return result;
     }
-    public static String getDateFromNow(int num,String pattern){
+    public static Date getDateFromNow(int num,String pattern){
         Calendar calendar=Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_MONTH,num);
         SimpleDateFormat dateFormat=new SimpleDateFormat(pattern);
         String result=dateFormat.format(calendar.getTime());
-        return result;
+        Date date=null;
+        try{
+            date=dateFormat.parse(result);
+        }catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
     }
 }

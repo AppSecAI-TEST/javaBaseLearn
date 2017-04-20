@@ -3,6 +3,8 @@ package com.learn.Test;
 import com.learn.utils.DateUtil;
 import org.junit.Test;
 
+import java.util.Date;
+
 /**
  * Created by xia_yu on 2017/4/20.
  */
@@ -15,7 +17,7 @@ public class DateUtilTest {
     }
     @Test
     public void getDateFromNow(){
-        String result=DateUtil.getDateFromNow(5,DATE_PATTERN);
+        Date result=DateUtil.getDateFromNow(5,DATE_PATTERN);
         System.out.println(result);
     }
 }
