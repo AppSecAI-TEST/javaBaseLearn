@@ -1,7 +1,7 @@
 package com.learn.Test;
 
 import com.learn.generic.Generic;
-import com.learn.model.Person;
+import com.learn.pojo.Person;
 
 /**
  * Created by xia_yu on 2017/4/18.

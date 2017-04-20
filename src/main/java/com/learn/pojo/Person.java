@@ -1,4 +1,4 @@
-package com.learn.model;
+package com.learn.pojo;
 
 import lombok.Data;
 
