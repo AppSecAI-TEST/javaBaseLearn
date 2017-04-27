@@ -22,4 +22,9 @@ public class XmlSerializerTest {
        /* User user=new User(2,"小刚","abc",new Date(),15000.0);
         XMLUtil.convertToXml(user,"src//main//file//create.xml");*/
     }
+    @Test
+    public void convertXmlFileToObject(){
+        User user=(User) XMLUtil.convertXmlPathToObject("src//main//file//create.xml",User.class);
+        System.out.println(user);
+    }
 }
