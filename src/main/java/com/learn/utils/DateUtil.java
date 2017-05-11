@@ -28,4 +28,18 @@ public class DateUtil {
         }
         return date;
     }
+
+    public static Calendar convertStringToCalendar(String dateStr){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            Date date=sdf.parse(dateStr);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            return calendar;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

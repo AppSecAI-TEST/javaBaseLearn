@@ -6,6 +6,7 @@ import org.junit.Test;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -35,6 +36,11 @@ public class DateUtilTest {
             e.printStackTrace();
         }
         System.out.println(gc.toGregorianCalendar().getTime());
+    }
+    @Test
+    public void testDateUtils(){
+        Calendar calendar=DateUtil.convertStringToCalendar("2017-09-07 18:50:00");
+        System.out.println(calendar.getTimeInMillis());
     }
 
 }
