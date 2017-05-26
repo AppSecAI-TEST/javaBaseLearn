@@ -1,4 +1,4 @@
-package com.learn.Test;
+package com.test;
 
 import com.learn.generic.Generic;
 import com.learn.pojo.Person;

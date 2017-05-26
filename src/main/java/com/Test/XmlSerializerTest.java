@@ -1,4 +1,4 @@
-package com.learn.Test;
+package com.test;
 
 
 import com.learn.serializer.User;
