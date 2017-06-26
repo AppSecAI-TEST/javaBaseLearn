@@ -57,38 +57,13 @@ public class StringUtils {
         StringBuilder outBoundRouting=new StringBuilder();//去程退改签信息
         StringBuilder inBoundRouting=new StringBuilder();//回程退改签信息
         StringBuilder returnRouting=new StringBuilder();
+
         List<Flight> outBoundFlightList=flightGroup.get(0);//去程航段
-        int outBoundFlightSize=outBoundFlightList.size();
-        if(outBoundFlightSize==1){
-            Flight outBoundFlight=outBoundFlightList.get(0);
-            outBoundRouting.append(outBoundFlight.getDepCity()+"-").append(outBoundFlight.getMarketingCarrier()+"-").append(outBoundFlight.getArrCity());
-        }else{
-            for(int i=0;i<outBoundFlightSize;i++){
-                Flight outBoundFlight=outBoundFlightList.get(i);
-                if(i==(outBoundFlightSize-1)){
-                    outBoundRouting.append(outBoundFlight.getArrCity());
-                }else{
-                    outBoundRouting.append(outBoundFlight.getDepCity()+"-").append(outBoundFlight.getMarketingCarrier()+"-");
-                }
-            }
-        }
+        joinSegmentRouting(outBoundFlightList,outBoundRouting);
 
         if(flightGroup.size()==2){//有回程信息
             List<Flight> inBoundFlightList=flightGroup.get(1);//回程航段
-            int inBoundFlightSize=inBoundFlightList.size();
-            if(inBoundFlightSize==1){
-                Flight inBoundFlight=inBoundFlightList.get(0);
-                outBoundRouting.append(inBoundFlight.getDepCity()+"-").append(inBoundFlight.getMarketingCarrier()+"-").append(inBoundFlight.getArrCity());
-            }else{
-                for(int j=0;j<inBoundFlightSize;j++){
-                    Flight inBoundFlight=inBoundFlightList.get(j);
-                    if(j==(inBoundFlightSize-1)){
-                        inBoundRouting.append(inBoundFlight.getArrCity());
-                    }else{
-                        inBoundRouting.append(inBoundFlight.getDepCity()+"-").append(inBoundFlight.getMarketingCarrier()+"-");
-                    }
-                }
-            }
+            joinSegmentRouting(inBoundFlightList,inBoundRouting);
         }
         if(!outBoundRouting.toString().equals("")){
             returnRouting.append(outBoundRouting);
@@ -97,5 +72,15 @@ public class StringUtils {
             returnRouting.append("|").append(inBoundRouting);
         }
         return returnRouting.toString();
+    }
+    public static void joinSegmentRouting(List<Flight> flightList,StringBuilder builder){
+        int flightSize=flightList.size();
+        for(int j=0;j<flightSize;j++){
+            Flight inBoundFlight=flightList.get(j);
+            builder.append(inBoundFlight.getDepCity()+"-").append(inBoundFlight.getMarketingCarrier()+"-");
+            if(j==(flightSize-1)){
+                builder.append(inBoundFlight.getArrCity());
+            }
+        }
     }
 }
