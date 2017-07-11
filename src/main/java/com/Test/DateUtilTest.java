@@ -41,9 +41,9 @@ public class DateUtilTest {
     }
     @Test
     public void testDateUtils() throws UnsupportedEncodingException {
-        String str = gbkTransfer("中国长城FS/CN/GDS/WD");
+        String str = gbkTransfer("FS/CN/GDS/WD");
         System.out.println(str);
-        String str2 = toGBK("中国长城FS/CN/GDS/WD");
+        String str2 = toGBK("FS/CN/GDS/WD");
         System.out.println(str2);
     }
 
