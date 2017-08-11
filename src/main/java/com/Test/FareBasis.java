@@ -23,19 +23,19 @@ public class FareBasis {
         FareType fareType2 = new FareType();
         fareType2.setSegmentNo(2);
         fareType2.setDepartCity("SHA");
-        fareType2.setFareBasis("WBS");
+        fareType2.setFareBasis("ZBS");
         fareTypeList.add(fareType2);
 
         FareType fareType3 = new FareType();
         fareType3.setSegmentNo(3);
         fareType3.setDepartCity("WHU");
-        fareType3.setFareBasis("WBS");
+        fareType3.setFareBasis("ZBS");
         fareTypeList.add(fareType3);
 
         FareType fareType4 = new FareType();
         fareType4.setSegmentNo(4);
         fareType4.setDepartCity("HKG");
-        fareType4.setFareBasis("ZHB");
+        fareType4.setFareBasis("WBS");
         fareTypeList.add(fareType4);
 
         List<FareType> cloneFareTypeList=new ArrayList<>();

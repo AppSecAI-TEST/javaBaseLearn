@@ -1,5 +1,9 @@
 package com.learn.utils;
 
+
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonParser;
+
 import java.io.*;
 
 /**
@@ -90,6 +94,15 @@ public class JsonUtil {
     private static void addIndentBlank(StringBuilder builder, int indent) {
         for (int i = 0; i < indent; i++) {
             builder.append('\t');
+        }
+    }
+
+    public static boolean isJson(String json) {
+        try {
+            new JsonParser().parse(json);
+            return true;
+        } catch (JsonParseException e) {
+            return false;
         }
     }
 }
